@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-freewebstore",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "n8n node for FreeWebStore API integration",
   "keywords": [
     "n8n-community-node-package",
@@ -45,7 +45,7 @@
     "eslint": "^8.0.0",
     "eslint-plugin-n8n-nodes-base": "^1.11.0",
     "gulp": "^5.0.1",
-    "n8n-workflow": "*",
+    "n8n-workflow": ">=1.117.3",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   },
