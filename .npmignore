@@ -1,0 +1,48 @@
+# Source files (only publish dist/)
+nodes/**/*.ts
+credentials/**/*.ts
+!dist/
+
+# Development files
+.git/
+.gitignore
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Documentation (include README.md but exclude others)
+DOCKER_GUIDE.md
+PRIVATE_DEPLOYMENT.md
+CONTRIBUTING.md
+examples/
+setup.sh
+
+# Build files
+tsconfig.json
+.eslintrc.js
+.eslintrc.prepublish.js
+gulpfile.js
+
+# Docker files
+docker-compose.yml
+Dockerfile
+.dockerignore
+.env
+.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+test/
+*.test.ts
+*.spec.ts
+
+# OS files
+.DS_Store
+Thumbs.db

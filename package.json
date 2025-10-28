@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-freewebstore",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "n8n node for FreeWebStore API integration",
   "keywords": [
     "n8n-community-node-package",
@@ -9,23 +9,23 @@
     "ecommerce"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/yourusername/n8n-nodes-freewebstore",
+  "homepage": "https://github.com/richarvey/n8n-nodes-freewebstore",
   "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com"
+    "name": "Ric Harvey",
+    "email": "ric@sqcows.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/n8n-nodes-freewebstore.git"
+    "url": "git+https://github.com/richarvey/n8n-nodes-freewebstore.git"
   },
   "main": "index.js",
   "scripts": {
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes credentials --write",
-    "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
+    "lint": "eslint nodes credentials --ext .ts",
+    "lintfix": "eslint nodes credentials --ext .ts --fix",
+    "prepublishOnly": "npm run build && npm run lint"
   },
   "files": [
     "dist"
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^5.30.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
     "eslint": "^8.0.0",
     "eslint-plugin-n8n-nodes-base": "^1.11.0",
     "gulp": "^5.0.1",
