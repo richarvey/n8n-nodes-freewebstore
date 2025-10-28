@@ -1,0 +1,54 @@
+{
+  "name": "n8n-nodes-freewebstore",
+  "version": "1.0.0",
+  "description": "n8n node for FreeWebStore API integration",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "freewebstore",
+    "ecommerce"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/n8n-nodes-freewebstore",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/n8n-nodes-freewebstore.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/FreeWebStoreApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/FreeWebStore/FreeWebStore.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-n8n-nodes-base": "^1.11.0",
+    "gulp": "^5.0.1",
+    "n8n-workflow": "*",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

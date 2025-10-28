@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER:-admin}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD:-changeme}
+      - N8N_HOST=${N8N_HOST:-localhost}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - NODE_ENV=production
+      - WEBHOOK_URL=${WEBHOOK_URL:-http://localhost:5678/}
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE:-America/New_York}
+      # Custom extensions directory
+      - N8N_CUSTOM_EXTENSIONS=/data/custom
+    volumes:
+      # Persist n8n data
+      - n8n_data:/home/node/.n8n
+      # Mount the custom node directory
+      - ./:/data/custom
+    command: /bin/sh -c "cd /data/custom && npm install && npm run build && n8n start"
+
+volumes:
+  n8n_data:
+    driver: local
+
+# To use this docker-compose.yml:
+# 1. Create a .env file in the same directory with your credentials:
+#    N8N_BASIC_AUTH_USER=your_username
+#    N8N_BASIC_AUTH_PASSWORD=your_secure_password
+#    N8N_HOST=your-domain.com (optional)
+#    WEBHOOK_URL=https://your-domain.com/ (optional)
+#
+# 2. Run: docker-compose up -d
+# 3. Access n8n at http://localhost:5678
+# 4. The FreeWebStore node will be available in the node list
