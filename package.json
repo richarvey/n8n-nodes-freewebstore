@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-freewebstore",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "n8n node for FreeWebStore API integration",
   "keywords": [
     "n8n-community-node-package",
@@ -51,5 +51,8 @@
   },
   "peerDependencies": {
     "n8n-workflow": "*"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^2.0.31"
   }
 }
